@@ -15,9 +15,9 @@ app.get('/', async (req, res) => {
   
   if (req.query.url) {
     const proxyRes = await axios.get(`${req.query.url}`,{headers: {
-            "x-rapidapi-host": "api-football-beta.p.rapidapi.com",
-            "x-rapidapi-key": process.env.API_KEY,
-        }});
+        "x-rapidapi-host": "https://api-football-v1.p.rapidapi.com/v3/teams/statistics",
+        "x-rapidapi-key": process.env.API_KEY,
+    }});
     // const proxyRes = await axios.get(req.query.url);
     res.send(proxyRes.data);
   } else {
